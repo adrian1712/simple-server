@@ -1,0 +1,20 @@
+<h2>Products</h2>
+
+<a href="product/create">Create Product</a>
+
+{{#each data.productList}}
+    <div>
+        <div>
+            <strong>Name</strong> {{name}}
+        </div>
+        <div>
+            <strong>Description</strong> {{description}}
+        </div>
+        <div>
+            <strong>Price</strong>  {{price}}
+        </div>
+        <div>
+            <strong>Image</strong>  {{image}}
+        </div>
+    </div>
+{{/each }}
