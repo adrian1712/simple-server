@@ -1,20 +1,21 @@
 <h2>Products</h2>
 
-<a href="product/create">Create Product</a>
+<a class="btn btn-warning"href="/product/{{ data.product.id }}/edit">Edit Product</a>
+<a class="btn btn-danger"href="/product/{{ data.product.id }}/delete">Delete Product</a>
 
-{{#each data.productList}}
-    <div>
+<div class="panel panel-default">
+    <div class="panel-body">
         <div>
-            <strong>Name</strong> {{name}}
+            <strong>Name</strong> {{ data.product.name }}
         </div>
         <div>
-            <strong>Description</strong> {{description}}
+            <strong>Description</strong> {{data.product.description}}
         </div>
         <div>
-            <strong>Price</strong>  {{price}}
+            <strong>Price</strong>  {{data.product.price}}
         </div>
         <div>
-            <strong>Image</strong>  {{image}}
+            <strong>Image</strong>  {{data.product.image}}
         </div>
     </div>
-{{/each }}
+</div>

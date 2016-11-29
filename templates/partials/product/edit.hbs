@@ -1,4 +1,4 @@
-<h1>Edit Products</h1>
+<h1>{{data.title}}</h1>
 
 {{#if message.success}}
     <div class="success notice">
@@ -8,10 +8,13 @@
     </div>
 {{/if}}
 
-<form method='POST' action="/product" enctype="application/x-www-form-urlencoded">
-    <input name="name" placeholder="Name">
-    <input name="price" placeholder="Price">
-    <input name="image" placeholder="Image">
-    <textarea name="description" placeholder="Description"></textarea>
+<form method='POST' action="/product/{{data.product.id}}" enctype="application/x-www-form-urlencoded">
+    <input type="hidden" name="_method" value="{{data.method}}">
+
+
+    <input name="name" type="text" placeholder="Name" value="{{ data.product.name }}">
+    <input name="price" type="text" placeholder="Price" value="{{ data.product.price }}">
+    <input name="image" type="text" placeholder="Image" value="{{ data.product.image }}">
+    <textarea name="description" placeholder="Description">{{ data.product.description }}</textarea>
     <button type="submit">Submit</button>
 </form>
