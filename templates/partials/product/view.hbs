@@ -19,6 +19,7 @@
         </div>
     </div>
 </div>
+{{#if user}}
 <div class="panel panel-defult">
     <div class="panel-body">
         <form class="panel-body" action="/product/{{data.product.id}}/comment" method="POST" enctype="application/x-www-form-urlencoded">
@@ -31,11 +32,11 @@
 
     </div>
 </div>
-
+{{/if}}
 {{#each data.product.comments}}
     <div class="panel panel-defult">
         <div class="panel-body">
-            <a href="#">author</a>
+            <a href="/user/{{author.id}}">{{author.username}}</a>
             <p>{{content}}</p>
         </div>
     </div>
